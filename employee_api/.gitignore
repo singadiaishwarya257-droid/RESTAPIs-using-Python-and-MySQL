@@ -1,0 +1,31 @@
+# Virtual Environment
+venv/
+env/
+
+# Environment Variables (DO NOT UPLOAD SECRETS)
+.env
+.env.local
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads and Reports (optional)
+uploads/
+reports/
+
+# Database
+*.db
+*.sqlite

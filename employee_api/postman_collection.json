@@ -1,0 +1,739 @@
+{
+  "info": {
+    "name": "Employee Management REST API",
+    "description": "Complete REST API collection for Employee Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health & Status",
+      "item": [
+        {
+          "name": "Welcome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                ""
+              ]
+            },
+            "description": "Welcome endpoint - returns API information"
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/health",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "health"
+              ]
+            },
+            "description": "Check database connection status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employee CRUD",
+      "item": [
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees?name=John Doe&email=john@company.com&department=IT&salary=75000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "John Doe"
+                },
+                {
+                  "key": "email",
+                  "value": "john@company.com"
+                },
+                {
+                  "key": "department",
+                  "value": "IT"
+                },
+                {
+                  "key": "salary",
+                  "value": "75000"
+                }
+              ]
+            },
+            "description": "Add a new employee to database"
+          }
+        },
+        {
+          "name": "Get All Employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees"
+              ]
+            },
+            "description": "Retrieve all employees from database"
+          }
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "1"
+              ]
+            },
+            "description": "Get specific employee by ID"
+          }
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/1?name=Jane Doe&salary=80000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Jane Doe"
+                },
+                {
+                  "key": "salary",
+                  "value": "80000"
+                }
+              ]
+            },
+            "description": "Update employee details"
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "1"
+              ]
+            },
+            "description": "Delete an employee from database"
+          }
+        },
+        {
+          "name": "Search by Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/search/name?value=John",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "search",
+                "name"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "John"
+                }
+              ]
+            },
+            "description": "Search employees by name"
+          }
+        },
+        {
+          "name": "Search by Department",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/search/department?value=IT",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "search",
+                "department"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "IT"
+                }
+              ]
+            },
+            "description": "Search employees by department"
+          }
+        },
+        {
+          "name": "Get Employee Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/employees/stats/summary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "employees",
+                "stats",
+                "summary"
+              ]
+            },
+            "description": "Get employee count and salary statistics"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Text File Operations",
+      "item": [
+        {
+          "name": "Create Text File",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/create?filename=notes.txt&content=Hello World",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "create"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "notes.txt"
+                },
+                {
+                  "key": "content",
+                  "value": "Hello World"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Write to Text File",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/write?filename=notes.txt&content=New content",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "write"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "notes.txt"
+                },
+                {
+                  "key": "content",
+                  "value": "New content"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Append to Text File",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/append?filename=notes.txt&content=Appended line",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "append"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "notes.txt"
+                },
+                {
+                  "key": "content",
+                  "value": "Appended line"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Read Text File",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/read/notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "read",
+                "notes.txt"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Read Text File Lines",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/lines/notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "lines",
+                "notes.txt"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Check File Exists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/exists/notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "exists",
+                "notes.txt"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get File Size",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/size/notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "size",
+                "notes.txt"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Rename File",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/rename?old_filename=notes.txt&new_filename=updated_notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "rename"
+              ],
+              "query": [
+                {
+                  "key": "old_filename",
+                  "value": "notes.txt"
+                },
+                {
+                  "key": "new_filename",
+                  "value": "updated_notes.txt"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Copy File",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/copy?source_filename=notes.txt&dest_filename=notes_backup.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "copy"
+              ],
+              "query": [
+                {
+                  "key": "source_filename",
+                  "value": "notes.txt"
+                },
+                {
+                  "key": "dest_filename",
+                  "value": "notes_backup.txt"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete File",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/text/notes.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "text",
+                "notes.txt"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CSV File Operations",
+      "item": [
+        {
+          "name": "Read CSV File",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/csv/read/employees.csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "csv",
+                "read",
+                "employees.csv"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Import CSV to Database",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/csv/import?filename=employees.csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "csv",
+                "import"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "employees.csv"
+                }
+              ]
+            },
+            "description": "CSV must have: name,email,department,salary"
+          }
+        },
+        {
+          "name": "Export Database to CSV",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/csv/export?filename=employees_export.csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "csv",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "employees_export.csv"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "JSON File Operations",
+      "item": [
+        {
+          "name": "Read JSON File",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/json/read/data.json",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "json",
+                "read",
+                "data.json"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Import JSON to Database",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/json/import?filename=employees.json",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "json",
+                "import"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "employees.json"
+                }
+              ]
+            },
+            "description": "JSON must be array or object with employees array"
+          }
+        },
+        {
+          "name": "Export Database to JSON",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/json/export?filename=employees_export.json",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "json",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "filename",
+                  "value": "employees_export.json"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "File Upload & Download",
+      "item": [
+        {
+          "name": "List Uploaded Files",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "list"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Download File",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/download/data.csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "download",
+                "data.csv"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Download Report",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/files/report-download/employees_export.csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "files",
+                "report-download",
+                "employees_export.csv"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
